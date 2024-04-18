@@ -1,0 +1,4 @@
+config BR2_PACKAGE_AESD_PROJECT
+	bool "aesd_project"
+	help
+	  Make and install utilities in the usr/bin	  

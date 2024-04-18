@@ -1,0 +1,4 @@
+config BR2_PACKAGE_LCD_DISPLAY
+	bool "lcd_display"
+	help
+	  Includes the support for lcd display	  
