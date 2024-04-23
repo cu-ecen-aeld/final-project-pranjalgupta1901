@@ -4,12 +4,15 @@
 #
 
 # Debian ifupdown needs the /run/network lock directory
-mkdir -p /run/network
-modprobe brcmfmac
-
 case "$1" in
   start)
 	printf "Starting network: "
+	mkdir -p /run/network
+	modprobe brcmfmac
+	ifup wlan0
+	modprobe i2c-bcm2835  
+	modprobe i2c-dev  
+
 	/sbin/ifup -a
 	[ $? = 0 ] && echo "OK" || echo "FAIL"
 	;;
@@ -28,3 +31,5 @@ case "$1" in
 esac
 
 exit $?
+
+
